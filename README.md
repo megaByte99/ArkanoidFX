@@ -1,5 +1,5 @@
 # ArkanoidFX
-Arkanoid game written in JavaFX
+<h1>Arkanoid game written in JavaFX</h1>
 
 KeyBoards:
 <ul>
