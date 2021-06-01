@@ -1,0 +1,35 @@
+{
+  "sprite": {
+    "ball": {
+      "radius": 6,
+      "diameter": 12
+    },
+    "player": {
+      "width": 80,
+      "height": 16
+    },
+    "brick": {
+      "width": 48,
+      "height": 24
+    },
+    "powerup": {
+      "width": 24,
+      "height": 24
+    },
+    "laser": {
+      "width": 32,
+      "height": 16
+    }
+  },
+  "window": {
+    "main": {
+      "width": 960,
+      "height": 720
+    },
+    "game": {
+      "width": 520,
+      "height": 680,
+      "edges": 20
+    }
+  }
+}
