@@ -12,4 +12,8 @@ KeyBoards:
 
 ScreenShots:
 
-![Alt text](ArkanoidFX/res/screenshot/menu.JPG?raw=true "Optional Title")
+![Menu](res/screenshot/menu.jpg?raw=true)
+![Game 1](res/screenshot/game1.jpg?raw=true)
+![Game 2](res/screenshot/game2.jpg?raw=true)
+![Powerup](res/screenshot/powerup.jpg?raw=true)
+
