@@ -46,8 +46,10 @@ public class Game {
                     case RIGHT: p_right = true;
                         break;
                     case SPACE:
-                        launched = true;
-                        SoundHandler.playSound(SoundHandler.BALL_BOUNCE_1);
+                        if (!launched) {
+                            launched = true;
+                            SoundHandler.playSound(SoundHandler.BALL_BOUNCE_1);
+                        }
                         break;
                     case P: pauseGame();
                         break;
