@@ -12,4 +12,4 @@ KeyBoards:
 
 ScreenShots:
 
-![Alt text](/ArkanoidFX/res/screenshot/menu.jpg?raw=true "Optional Title")
+![Alt text]( ArkanoidFX/res/screenshot/menu.JPG?raw=true "Optional Title")
