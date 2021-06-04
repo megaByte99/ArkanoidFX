@@ -78,7 +78,7 @@ public class Player extends Entity {
     }
 
     public void shoot() {
-        if (Powerups.effect_state == Powerups.EFFECT_STATE.LASER) {
+        if (Powerups.effect_state == Powerups.EFFECT_STATE.LASER && !GameState.isThisCurrentState(GameState.STATES.PAUSE_GAME)) {
             if (!GameScene.isPresentOnScreen(laser)) {
                 GameScene.addEntity(laser);
                 laser.setPosition(getX() + 24, getY() + 18);
