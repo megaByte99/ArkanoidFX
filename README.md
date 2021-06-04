@@ -16,4 +16,5 @@ ScreenShots:
 ![Game 1](res/screenshot/game1.jpg?raw=true)
 ![Game 2](res/screenshot/game2.jpg?raw=true)
 ![Powerup](res/screenshot/powerup.jpg?raw=true)
+![Laser shoot](res/screenshot/laser.jpg?raw=true)
 
