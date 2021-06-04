@@ -111,17 +111,18 @@ public final class PopupBox {
                return n2.compareTo(n1);
             });
 
-            for (int i = 0; i < jArray.size(); i++) {
-                JSONObject jPlayer = (JSONObject) jArray.get(i);
-                Label namePlayer = new Label(jPlayer.get("name").toString());
-                Label scoreLabel = new Label("" + jPlayer.get("score").toString());
-
+            for (int i = 0; i < 10; i++) {
                 HBox row = new HBox(30);
+                if (i < jArray.size()) {
+                    JSONObject jPlayer = (JSONObject) jArray.get(i);
+                    Label namePlayer = new Label(jPlayer.get("name").toString());
+                    Label scoreLabel = new Label("" + jPlayer.get("score").toString());
 
-                namePlayer.setPrefSize(w_cell, 50);
-                scoreLabel.setPrefSize(w_cell, 50);
+                    namePlayer.setPrefSize(w_cell, 50);
+                    scoreLabel.setPrefSize(w_cell, 50);
 
-                row.getChildren().addAll(namePlayer, scoreLabel);
+                    row.getChildren().addAll(namePlayer, scoreLabel);
+                }
                 row.setAlignment(Pos.CENTER);
                 tableContent.addRow(i + 1, row);
             }

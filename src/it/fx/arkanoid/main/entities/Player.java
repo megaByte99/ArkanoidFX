@@ -1,12 +1,13 @@
 package it.fx.arkanoid.main.entities;
 
+import it.fx.arkanoid.main.utils.Animation;
 import it.fx.arkanoid.main.utils.SoundHandler;
 import it.fx.arkanoid.main.view.scenes.GameScene;
-import it.fx.arkanoid.main.utils.Animation;
 import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 
-import static it.fx.arkanoid.main.utils.Constant.*;
+import static it.fx.arkanoid.main.utils.Constant.GAME_SCREEN_EDGE;
+import static it.fx.arkanoid.main.utils.Constant.W_GAME_SCREEN;
 import static it.fx.arkanoid.main.utils.FileLoader.*;
 
 public class Player extends Entity {
@@ -72,6 +73,7 @@ public class Player extends Entity {
         GameScene.removeEntity(laser);
         setPosition(p0.getX(), p0.getY());
         animate(Animation.PLAYER_ANIMATION, 250, -1);
+        setSprite(img_player);
         dir = 0;
     }
 
@@ -80,7 +82,7 @@ public class Player extends Entity {
             if (!GameScene.isPresentOnScreen(laser)) {
                 GameScene.addEntity(laser);
                 laser.setPosition(getX() + 24, getY() + 18);
-                SoundHandler.playSound("Laser Sound");
+                SoundHandler.playSound(SoundHandler.LASER_EFFECT);
             }
         }
     }

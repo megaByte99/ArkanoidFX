@@ -45,14 +45,16 @@ public class Game {
                         break;
                     case RIGHT: p_right = true;
                         break;
-                    case SPACE: launched = true;
-                         break;
+                    case SPACE:
+                        launched = true;
+                        SoundHandler.playSound(SoundHandler.BALL_BOUNCE_1);
+                        break;
                     case P: pauseGame();
-                         break;
+                        break;
                     case F2: newGame();
-                         break;
+                        break;
                     case F: player.shoot();
-                         break;
+                        break;
                     default: break;
                 }
             } else if (event.getEventType() == KeyEvent.KEY_RELEASED) {
@@ -144,7 +146,7 @@ public class Game {
         GameState.setCurrentState(GameState.STATES.RUN_GAME);
 
         SoundHandler.playSound(LEVEL_START);
-        PauseTransition delay = new PauseTransition(Duration.seconds(4.5));
+        PauseTransition delay = new PauseTransition(Duration.seconds(3));
         delay.setOnFinished(d -> {
             for (Entity b : bricks)
                 GameScene.addEntity(b);
@@ -200,8 +202,12 @@ public class Game {
             if (first_frames <= 0) {
                 // Ball-Player Collision
                 if (ball.isColliding(player)) {
-                    if (ball.getY() + ball_radius <= player.getY() + player_height / 2.d && ball.vy > 0)
+                    if (ball.getY() + ball_radius <= player.getY() + player_height / 2.d && ball.vy > 0) {
                         ball.randomAngle();
+
+                        if (Powerups.effect_state != Powerups.EFFECT_STATE.LASER)
+                            SoundHandler.playSound(SoundHandler.BALL_BOUNCE_1);
+                    }
                 }
 
                 // Brick Collision with Ball and Laser
@@ -284,6 +290,7 @@ public class Game {
     }
 
     private void gameOver(String result) {
+        GameState.setCurrentState(GameState.STATES.GAMEOVER);
         Platform.runLater(() -> PopupBox.showSaveScoreBox(result, n_score));
     }
 

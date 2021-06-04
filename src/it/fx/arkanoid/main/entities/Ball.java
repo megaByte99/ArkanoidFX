@@ -1,5 +1,6 @@
 package it.fx.arkanoid.main.entities;
 
+import it.fx.arkanoid.main.utils.SoundHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 
@@ -117,7 +118,6 @@ public class Ball extends Entity {
             }
         }
     }
-
 
     public boolean hasFallen() {
         return this.getY() > H_GAME_SCREEN;

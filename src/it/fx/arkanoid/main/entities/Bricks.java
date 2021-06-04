@@ -1,5 +1,6 @@
 package it.fx.arkanoid.main.entities;
 
+import it.fx.arkanoid.main.utils.SoundHandler;
 import it.fx.arkanoid.main.view.scenes.GameScene;
 import it.fx.arkanoid.main.utils.Animation;
 import javafx.scene.image.Image;
@@ -49,12 +50,7 @@ public class Bricks extends ArrayList<Entity> {
         }
     }
 
-    // Flag for see if "super ball" powerup is enable
-    private static boolean b_reflection;
-
-    public Bricks() {
-        b_reflection = true;
-    }
+    public Bricks() { /* ... */ }
 
     /**
      * Add a {@code Brick} entity in {@code Bricks}
@@ -90,6 +86,9 @@ public class Bricks extends ArrayList<Entity> {
                     } else {
                         ball.reflect();
                     }
+
+                    if (Powerups.effect_state != Powerups.EFFECT_STATE.LASER)
+                        SoundHandler.playSound(SoundHandler.BALL_BOUNCE_2);
 
                     if (brick.isDestroyed())
                         return brick;
